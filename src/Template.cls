@@ -3,7 +3,6 @@
  * @date 4/11/2018
  * @description template class for setting default values when used with an object builder
  */ 
- @isTest
 public abstract class Template {
 
 	/**

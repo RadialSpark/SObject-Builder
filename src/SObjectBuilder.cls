@@ -66,9 +66,19 @@ public class SObjectBuilder {
 	 * @return {SObjectBuilder} reference to the calling SObjectBuilder
 	 * @throws {SObjectBuilderException} if a required field does not exist in the fieldMapping
 	 */
-	public  SObjectBuilder set(String field, Object value) {
+	public SObjectBuilder set(String field, Object value) {
 		if (schemaMap.get(field) == null) throw new SObjectBuilderException('Invalid field ' + field + ' for sObject type ' + this.sObjectType);
 		this.fieldMapping.put(field, value);
+		return this;
+	}
+
+	/**
+	 * @description sets a value to null
+	 * @param {String} the api name of the field to unset
+	 * @return {SObjectBuilder} reference to the calling SObjectBuilder
+	 */
+	public SObjectBuilder unset(String field) {
+		if (this.fieldMapping.containsKey(field)) this.fieldMapping.put(field, null);
 		return this;
 	}
 

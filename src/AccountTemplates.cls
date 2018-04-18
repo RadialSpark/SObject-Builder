@@ -2,7 +2,8 @@
  * @author Thomas Wilkins
  * @date 4/11/2018
  * @description example template class
- */ 
+ */
+@isTest
 public class AccountTemplates {
 	public class StandardAccountTemplate extends Template {
 		protected override void init() {
